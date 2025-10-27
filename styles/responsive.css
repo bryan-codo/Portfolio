@@ -1,0 +1,147 @@
+/* Responsive Design - Mobile First Approach */
+
+/* Mobile Devices (0-768px) */
+@media (max-width: 768px) {
+    /* Mobile Navigation */
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        gap: 0;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links button {
+        display: block;
+        width: 100%;
+        padding: 1.2rem 1rem;
+        border-radius: 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #f0f0f0;
+        text-align: center;
+    }
+
+    .nav-links button:hover,
+    .nav-links button.active {
+        background: #3498db;
+        color: white;
+    }
+
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+    
+    .nav-brand {
+        font-size: 1.1rem;
+    }
+}
+
+/* Small Mobile Devices (0-480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem;
+    }
+    
+    .nav-brand {
+        font-size: 1rem;
+    }
+    
+    .nav-links {
+        width: 85%;
+    }
+    
+    .nav-links button {
+        padding: 1rem 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+/* Tablets and Larger Phones (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+    
+    .nav-links {
+        width: 70%;
+        max-width: 280px;
+    }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .nav-links {
+        gap: 2rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .nav-links button:hover {
+        background: none;
+        color: #666;
+    }
+    
+    .nav-links button.active {
+        color: #3498db;
+        background: #f8f9fa;
+    }
+    
+    .nav-links button:active {
+        background: #3498db;
+        color: white;
+    }
+}
+
+/* Safe Area Insets for Notch Phones */
+@supports(padding: max(0px)) {
+    .navbar {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-top: max(1rem, env(safe-area-inset-top));
+    }
+    
+    .nav-links {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
